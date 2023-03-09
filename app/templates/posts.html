@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %} {{user}} Contact list {% endblock %}
+
+{% block content %}
+<h1 class="text-center"> Contacts </h1>
+<form method='POST' action=''>
+    {{ form.csrf_token }}
+    {{ form.first_name.label }}
+    {{ form.first_name(class="form-control", placeholder='First name')}}
+
+    {{ form.last_name.label }}
+    {{ form.last_name(class="form-control", placeholder='Last name')}}
+
+    {{ form.mobile_phone.label }}
+    {{ form.mobile_phone(class="form-control", placeholder='Phone number')}}
+
+    {{ form.office_phone.label }}
+    {{ form.office_phone(class="form-control", placeholder='Phone number')}}
+
+    {{ form.submit(class = 'btn btn-primary mt-3') }}
+</form>
+
+{% endblock %}
